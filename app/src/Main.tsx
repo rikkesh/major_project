@@ -2,13 +2,14 @@
 import React from 'react'
 import Home from "./Home"
 import About from "./About"
-import Features from './Features'
 import Contact from './Contact'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import { BrowserRouter,Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './GlobalStyle'
+import Sorting from './Sorting'
+import Features from './Features'
 
 
 
@@ -45,8 +46,8 @@ const Main = () => {
   <Header/>
   <Routes>
     <Route path="/" element={<Home/>}    />
-    <Route path="/about" element={<About/>}    />
-    <Route path="/feature" element={<Features/>}    />
+    {/* <Route path="/about" element={<About/>}    /> */}
+    <Route path="/sorting" element={<Sorting/>}    />
     <Route path="/contact" element={<Contact/>}    />
   </Routes>
   <Footer/>
