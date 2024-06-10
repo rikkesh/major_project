@@ -45,9 +45,9 @@ const Main = () => {
   <Header/>
   <Routes>
     <Route path="/" element={<Home/>}    />
-    <Route path="/about" element={<About/>}    />
-    <Route path="/feature" element={<Features/>}    />
-    <Route path="/contact" element={<Contact/>}    />
+    <Route path="/About" element={<About/>}    />
+    <Route path="/Feature" element={<Features/>}    />
+    <Route path="/Contact" element={<Contact/>}    />
   </Routes>
   <Footer/>
  </BrowserRouter>
