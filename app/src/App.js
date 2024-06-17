@@ -160,7 +160,7 @@ class App extends Component {
         >
           {controlsSort}
         </SortTopBar>
-        {/* <Footer /> */}
+        {/* <Footer /> will add later*/}
       </div>
     );
   }
