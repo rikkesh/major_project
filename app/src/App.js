@@ -6,7 +6,6 @@ import AppControls from "./components/molecules/AppControls/AppControls";
 import TopBar from "./components/organisms/TopBar/TopBar";
 import AppDrawer from "./components/organisms/AppDrawer/AppDrawer";
 import SortVisualizer from "./components/organisms/SortVisualizer/SortVisualizer";
-import Footer from "./components/molecules/Footer/Footer";
 
 import BubbleSort, {
   BubbleSortKey,
@@ -16,18 +15,8 @@ import SelectionSort, {
   SelectionSortKey,
   SelectionSortDesc,
 } from "./algorithms/SelectionSort";
-import InsertionSort, {
-  InsertionSortKey,
-  InsertionSortDesc,
-} from "./algorithms/InsertionSort";
-import MergeSort, { MergeSortKey, MergeSortDesc } from "./algorithms/MergeSort";
-import QuickSort, { QuickSortKey, QuickSortDesc } from "./algorithms/QuickSort";
-import QuickSort3, {
-  QuickSort3Key,
-  QuickSort3Desc,
-} from "./algorithms/QuickSort3";
-import HeapSort, { HeapSortKey, HeapSortDesc } from "./algorithms/HeapSort";
-import ShellSort, { ShellSortKey, ShellSortDesc } from "./algorithms/ShellSort";
+import AppControlsSort from "./components/molecules/AppControlsSort/AppControlsSort";
+import SortTopBar from "./components/organisms/SortTopBar/SortTopBar";
 
 class App extends Component {
   state = {
@@ -42,34 +31,16 @@ class App extends Component {
   ALGORITHM = {
     "Bubble Sort": BubbleSort,
     "Selection Sort": SelectionSort,
-    "Insertion Sort": InsertionSort,
-    "Merge Sort": MergeSort,
-    "Quick Sort": QuickSort,
-    "Quick Sort 3": QuickSort3,
-    "Heap Sort": HeapSort,
-    "Shell Sort": ShellSort,
   };
 
   ALGORITHM_KEY = {
     "Bubble Sort": BubbleSortKey,
     "Selection Sort": SelectionSortKey,
-    "Insertion Sort": InsertionSortKey,
-    "Merge Sort": MergeSortKey,
-    "Quick Sort": QuickSortKey,
-    "Quick Sort 3": QuickSort3Key,
-    "Heap Sort": HeapSortKey,
-    "Shell Sort": ShellSortKey,
   };
 
   ALGORITHM_DESC = {
     "Bubble Sort": BubbleSortDesc,
     "Selection Sort": SelectionSortDesc,
-    "Insertion Sort": InsertionSortDesc,
-    "Merge Sort": MergeSortDesc,
-    "Quick Sort": QuickSortDesc,
-    "Quick Sort 3": QuickSort3Desc,
-    "Heap Sort": HeapSortDesc,
-    "Shell Sort": ShellSortDesc,
   };
 
   componentDidMount() {
@@ -146,6 +117,18 @@ class App extends Component {
       />
     );
 
+    const controlsSort = (
+      <AppControlsSort
+        onGenerateRandomArray={this.generateRandomArray}
+        algorithm={this.state.algorithm}
+        onAlgorithmChange={this.handleAlgorithmChange}
+        arraySize={this.state.arraySize}
+        onArraySizeChange={this.handleArraySizeChange}
+        onToggleDarkMode={this.toggleDarkMode}
+        darkMode={this.state.darkMode}
+      />
+    );
+
     return (
       <div className={theme}>
         <TopBar
@@ -163,6 +146,7 @@ class App extends Component {
         </AppDrawer>
 
         <main className="App__Body">
+          {" "}
           <SortVisualizer
             array={this.state.array}
             trace={this.state.trace}
@@ -170,7 +154,13 @@ class App extends Component {
             desc={desc}
           />
         </main>
-        {/* <Footer /> */}
+        <SortTopBar
+          drawerOpen={this.state.appDrawerOpen}
+          toggleDrawer={this.toggleAppDrawer}
+        >
+          {controlsSort}
+        </SortTopBar>
+        {/* <Footer /> will add later*/}
       </div>
     );
   }

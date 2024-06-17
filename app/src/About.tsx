@@ -3,7 +3,7 @@ import App from './App'
 
 const About = () => {
 
-    <div></div>
+   
   
 }
 

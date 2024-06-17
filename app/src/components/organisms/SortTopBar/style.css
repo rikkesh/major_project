@@ -1,4 +1,4 @@
-.TopBar {
+.SortTopBar {
   /* Default Styles */
   --top-bar-row-height: 64px;
   --top-bar-title-left-padding: 20px;
@@ -24,7 +24,7 @@
 
 /* Default Mobile Styles */
 @media (max-width: 599px) {
-  .TopBar {
+  .SortTopBar {
     --top-bar-row-height: 56px;
     --top-bar-section-vertical-padding: 4px;
     --top-bar-section-horizontal-padding: 4px;
@@ -33,20 +33,20 @@
 }
 
 @media (min-width: 768px) {
-  .TopBar {
+  .SortTopBar {
     --top-bar-menu-button-display: none;
     --top-bar-content-display: inline-flex;
   }
 }
 
-.TopBar__Row {
+.SortTopBar__Row {
   display: flex;
   position: relative;
   width: 100%;
   height: var(--top-bar-row-height);
 }
 
-.TopBar__Section {
+.SortTopBar__Section {
   display: inline-flex;
   flex: 1 1 auto;
   align-items: center;
@@ -55,18 +55,18 @@
   z-index: 1;
 }
 
-.TopBar__Section_align_start {
+.SortTopBar__Section_align_start {
   justify-content: flex-start;
   order: -1;
 }
 
-.TopBar__Section_align_end {
+.SortTopBar__Section_align_end {
   display: var(--top-bar-content-display);
-  justify-content: flex-end;
+  justify-content: center;
   order: 1;
 }
 
-.TopBar__Title {
+.SortTopBar__Title {
   font-size: 1.25rem;
   line-height: 2rem;
   font-weight: 500;
@@ -80,11 +80,11 @@
   z-index: 1;
 }
 
-.TopBar__MenuButton {
+.SortTopBar__MenuButton {
   display: var(--top-bar-menu-button-display);
 }
 
-.TopBar__Icon {
+.SortTopBar__Icon {
   height: 2rem;
   width: 2rem;
   margin: 0;
