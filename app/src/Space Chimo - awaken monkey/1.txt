@@ -1,0 +1,32 @@
+not just aesthetics, problem solving
+-art of crafting thoughtful solution
+DESIGN PROCESS MANTRA   -   Discover Define Design Deliver
+
+1. DISCOVER
+    -problem discovery
+    -req analysis
+    -search / research
+
+2. DEFINE
+    -
+3. DESIGN
+    -
+4. DELIVER
+
+UX designer -> UI -> Dev -> USER
+
+-dot voting ux design 
+
+-Assignment 
+-> design flow for your app
+
+
+KEY TAKEAWAYS
+
+UI -> visuals story teller
+UX -> crafting 
+
+DESIGN OF EVERYDAY THINGS   Refactoring UI  Practical UI
+nnngroup
+Today in design
+ARC browser

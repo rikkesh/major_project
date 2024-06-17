@@ -1,0 +1,45 @@
+1. empthasize DDD
+2. Design Sprint
+
+UX LAWS	(laws of UX.com)
+
+	1. Hick's law -> simplify choices for faster decisions (less options = quick choice)
+
+	2. Fitts's law -> time to reach and choose something depends on how far away and how 
+			big that target is
+			-make buttons easy to clikc
+
+	3. Laws of Proximity -> objs that are close to each other are preceived as a group
+			-familiarity breeds intution
+
+	4. Jakob's law -> user expects new designs to be similar to ones they are familiar with
+
+
+figma basics
+	1.Layers
+	2.Pages - 
+	3.Components
+	4.
+
+Behance		Design systems - foundations to follow
+shdan/ui
+
+Design systems - foundations to follow
+WHY?
+	-consistency
+	-efficiency
+	-branding
+	-Scalibility
+	-collaboration
+	-faster iteration
+	-Better UX
+Foundations
+	-colors -typography -styles -grids
+
+Colors
+	-defined pallete of hues used consistently throughout a digital product or a brand
+	-radix
+
+
+mobile 16
+web 	18
