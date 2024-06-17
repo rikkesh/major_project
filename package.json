@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@clerk/nextjs": "^5.1.4",
     "next": "^14.2.3",
     "prop-types": "^15.8.1",
     "react": "^18",
