@@ -37,7 +37,7 @@ export default function Navbar()  {
           {/* <li>
             <NavLink className='navbar-link 'to="">login</NavLink>
           </li> */}
-            <li>
+            
           <div > {userId ? (<div className='navbar-link'>
               
               
@@ -61,6 +61,8 @@ export default function Navbar()  {
               </div>
           )
           } </div>
+          <li>
+            <NavLink to="/contacts">login</NavLink>
           </li>
 
         

@@ -15,7 +15,7 @@ type AppControlsProps = {
   darkMode: boolean;
 };
 
-const AppControls: React.FC<AppControlsProps> = ({
+const AppControlsSort: React.FC<AppControlsProps> = ({
   algorithm,
   onAlgorithmChange,
   onGenerateRandomArray,
@@ -34,12 +34,13 @@ const AppControls: React.FC<AppControlsProps> = ({
         items={[
           'Bubble Sort',
           'Selection Sort',
+          
         ]}
         selected={validatedAlgorithm}
         onSelect={onAlgorithmChange}
       />
 
-      {/* <div className="AppControls__Size">
+      <div className="AppControls__Size">
         <span>Size</span>
         <Menu
           placeholder="Array Size"
@@ -49,7 +50,7 @@ const AppControls: React.FC<AppControlsProps> = ({
         />
       </div>
 
-      <Button onClick={onGenerateRandomArray}>Randomize</Button> */}
+      <Button onClick={onGenerateRandomArray}>Randomize</Button>
 
       {/* <Switch
         label="Dark Mode"
@@ -60,4 +61,4 @@ const AppControls: React.FC<AppControlsProps> = ({
   );
 };
 
-export default AppControls;
+export default AppControlsSort;

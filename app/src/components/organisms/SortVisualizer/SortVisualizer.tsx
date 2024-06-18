@@ -7,6 +7,7 @@ import VisualizerControls from '../../molecules/VisualizerControls/VisualizerCon
 import ProgressBar from '../../molecules/ProgressBar/ProgressBar';
 import ColorKey from '../../molecules/ColorKey/ColorKey';
 import SortInfo from '../../molecules/SortInfo/SortInfo';
+import SortTopBar from '../SortTopBar/SortTopBar';
 
 interface SortVisualizerProps {
   array: number[];
@@ -31,6 +32,7 @@ interface SortVisualizerState {
 
 class SortVisualizer extends Component<SortVisualizerProps, SortVisualizerState> {
   state: SortVisualizerState = {
+
     trace: [],
     traceStep: -1,
 
@@ -176,6 +178,9 @@ class SortVisualizer extends Component<SortVisualizerProps, SortVisualizerState>
   render() {
     return (
       <div className="SortVisualizer">
+        <SortInfo {...this.props.desc} />
+       
+       
         <SortChart
           numbers={this.state.array}
           maxNum={Math.max(...this.state.array)}
@@ -220,7 +225,6 @@ class SortVisualizer extends Component<SortVisualizerProps, SortVisualizerState>
 
         <ColorKey {...this.props.colorKey} />
 
-        <SortInfo {...this.props.desc} />
       </div>
     );
   }

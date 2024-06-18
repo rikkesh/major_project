@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components';
+import Courses from './Courses';
 const HeroSection = () => {
   return (
     <Wrapper>
@@ -16,12 +17,18 @@ const HeroSection = () => {
           </picture>
 
         </div>
-
-
-
       </div>
 
+      <div className="">
+
+      <Courses/>
+      </div>
+      
     </Wrapper>
+
+  
+      
+   
   )
 };
 const Wrapper= styled.section`  padding: 9rem 0;

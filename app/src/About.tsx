@@ -1,10 +1,17 @@
 import React from 'react'
-import App from './App'
 
 const About = () => {
+ 
+  return (
+    <div>
+      
+    </div>
+  )
 
-    <div></div>
+
+   
   
+
 }
 
 export default About
