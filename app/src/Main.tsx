@@ -10,6 +10,8 @@ import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './GlobalStyle'
 import Sorting from './Sorting'
 import Features from './Features'
+import Primitive from './components/Primitive/Primitive'
+import Stack from './components/Primitive/Stack'
 
 
 
@@ -49,6 +51,8 @@ const Main = () => {
     <Route path="/about" element={<About/>}    />
     <Route path="/sorting" element={<Sorting/>}    />
     <Route path="/contact" element={<Contact/>}    />
+    <Route path="/Primitive" element={<Primitive/>}    />
+    <Route path="/stack" element={<Stack/>}    />
     
   </Routes>
   <Footer/>

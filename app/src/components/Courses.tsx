@@ -26,7 +26,11 @@ const Courses = () => {
 <div className="container">
 <img src="./images/premitive.png" alt="Avatar" className="hover-image" />
 <div className="middle">
-<div className="text">Premitive Algorithm</div>
+<div className="text">
+  
+<button onClick={()=>navigate("/Primitive")}>Primitive Algorithm</button>
+
+</div>
 </div>
 </div>
 <div className="container">
