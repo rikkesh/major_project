@@ -12,6 +12,7 @@ import Sorting from './Sorting'
 import Features from './Features'
 import Primitive from './components/Primitive/Primitive'
 import Stack from './components/Primitive/Stack'
+import TestYourself from './TestYourself'
 
 
 
@@ -53,6 +54,7 @@ const Main = () => {
     <Route path="/contact" element={<Contact/>}    />
     <Route path="/Primitive" element={<Primitive/>}    />
     <Route path="/stack" element={<Stack/>}    />
+    <Route path="/TestYourself" element={<TestYourself/>}    />
     
   </Routes>
   <Footer/>

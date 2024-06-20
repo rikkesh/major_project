@@ -25,14 +25,14 @@ export default function Navbar()  {
           <li>
             <NavLink className='navbar-link' to="/about">About</NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink className='navbar-link' to="/sorting">Sorting</NavLink>
-          </li>
+          </li> */}
           <li>
             <NavLink className='navbar-link' to="/contacts">Contact</NavLink>
           </li>
           <li>
-            <NavLink className='navbar-link' to="/contacts">Test Yourself</NavLink>
+            <NavLink className='navbar-link' to="/TestYourself">Test Yourself</NavLink>
           </li>
           {/* <li>
             <NavLink className='navbar-link 'to="">login</NavLink>
@@ -47,11 +47,11 @@ export default function Navbar()  {
           ) : 
           (
             <div >
-              <li>
+              {/* <li>
                 <Link className='navbar-link' href='/sign-up'>
                 SignUp
                 </Link>
-                </li>
+                </li> */}
                 
                 <li>
                 <Link className='navbar-link' href='/sign-in'>
@@ -89,6 +89,7 @@ const Nav = styled.nav`
         text-transform: uppercase;
         color: ${({ theme }) => theme.colors.black};
         transition: color 0.3s linear;
+        height:auto;
       }
 
       &:hover,
