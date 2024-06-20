@@ -1,10 +1,11 @@
 import Main from "./src/Main"
-import Primitive from "./src/components/Primitive/Primitive"
+ import Auth from "./src/components/Login/Auth"
 
 const Home = () => {
   return (
     <Main/>
- 
+    
+
   )
 }
 

@@ -1,10 +1,19 @@
-import React from 'react'
+
+// import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components';
+import Link from 'next/link';
+import { auth, currentUser } from '@clerk/nextjs/server';
+import { UserButton, useAuth } from '@clerk/nextjs';
 
 
 
-const Navbar = () => {
+
+export default function Navbar()  {
+  
+  const { userId  } = useAuth();
+  
+
 
   return (
     <Nav>
@@ -25,9 +34,34 @@ const Navbar = () => {
           <li>
             <NavLink className='navbar-link' to="/contacts">Test Yourself</NavLink>
           </li>
-          <li>
-            <NavLink to="/contacts">login</NavLink>
-          </li>
+          {/* <li>
+            <NavLink className='navbar-link 'to="">login</NavLink>
+          </li> */}
+            
+          <div > {userId ? (<div className='navbar-link'>
+              
+              
+            <UserButton/>
+
+          </div > 
+          ) : 
+          (
+            <div >
+              <li>
+                <Link className='navbar-link' href='/sign-up'>
+                SignUp
+                </Link>
+                </li>
+                
+                <li>
+                <Link className='navbar-link' href='/sign-in'>
+                SignIn
+                </Link>
+              </li>
+              </div>
+          )
+          } </div>
+          
         
         
       </ul>
@@ -82,4 +116,4 @@ const Nav = styled.nav`
 
 
 
-export default Navbar
+
