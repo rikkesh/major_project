@@ -26,6 +26,7 @@ class App extends Component {
     trace: [],
     algorithm: null,
     appDrawerOpen: false,
+    totalSwaps: 0, //Track total swaps
   };
 
   ALGORITHM = {
@@ -82,8 +83,8 @@ class App extends Component {
     const numbers = [...this.state.array];
     const sort = this.ALGORITHM[this.state.algorithm];
     if (sort) {
-      const trace = sort(numbers);
-      this.setState({ trace });
+      const { trace, totalSwaps } = sort(numbers);
+      this.setState({ trace, totalSwaps });
     }
   };
 
@@ -152,6 +153,7 @@ class App extends Component {
             trace={this.state.trace}
             colorKey={colorKey}
             desc={desc}
+            totalSwaps={this.state.totalSwaps}
           />
         </main>
         <SortTopBar

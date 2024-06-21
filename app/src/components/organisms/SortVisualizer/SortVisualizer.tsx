@@ -14,6 +14,8 @@ interface SortVisualizerProps {
   trace: any[] | null;
   colorKey: any;
   desc: any;
+  currentSwaps:number;
+  totalSwaps: number; // Add totalSwaps to props
 }
 
 interface SortVisualizerState {
@@ -28,14 +30,13 @@ interface SortVisualizerState {
   sortedIndices: number[];
   timeoutIds: NodeJS.Timeout[];
   playbackSpeed: number;
+  currentSwaps: number; // Add currentSwaps to state
 }
 
 class SortVisualizer extends Component<SortVisualizerProps, SortVisualizerState> {
   state: SortVisualizerState = {
-
     trace: [],
     traceStep: -1,
-
     originalArray: [],
     array: [],
     groupA: [],
@@ -43,9 +44,9 @@ class SortVisualizer extends Component<SortVisualizerProps, SortVisualizerState>
     groupC: [],
     groupD: [],
     sortedIndices: [],
-
     timeoutIds: [],
-    playbackSpeed: 1
+    playbackSpeed: 1,
+    currentSwaps: 0 // Initialize currentSwaps
   };
 
   componentDidUpdate(prevProps: SortVisualizerProps) {
@@ -54,9 +55,10 @@ class SortVisualizer extends Component<SortVisualizerProps, SortVisualizerState>
     }
     if (prevProps.trace !== this.props.trace) {
       this.clearTimeouts();
-      this.setState({ trace: this.props.trace || [] });
+      this.setState({ trace: this.props.trace || [], currentSwaps: 0 });
     }
   }
+  
 
   // Actions
 
@@ -70,7 +72,8 @@ class SortVisualizer extends Component<SortVisualizerProps, SortVisualizerState>
       groupC: [],
       groupD: [],
       sortedIndices: [],
-      originalArray: [...array]
+      originalArray: [...array],
+      currentSwaps: 0 // Reset currentSwaps on reset
     });
   };
 
@@ -86,7 +89,8 @@ class SortVisualizer extends Component<SortVisualizerProps, SortVisualizerState>
       groupB: visualState.groupB,
       groupC: visualState.groupC,
       groupD: visualState.groupD,
-      sortedIndices: visualState.sortedIndices
+      sortedIndices: visualState.sortedIndices,
+      currentSwaps: visualState.swaps // Update currentSwaps
     });
   };
 
@@ -161,7 +165,8 @@ class SortVisualizer extends Component<SortVisualizerProps, SortVisualizerState>
       groupB: [],
       groupC: [],
       groupD: [],
-      sortedIndices: []
+      sortedIndices: [],
+      currentSwaps: 0 // Reset currentSwaps on repeat
     }));
     this.run(this.state.trace);
   };
@@ -179,8 +184,7 @@ class SortVisualizer extends Component<SortVisualizerProps, SortVisualizerState>
     return (
       <div className="SortVisualizer">
         <SortInfo {...this.props.desc} />
-       
-       
+
         <SortChart
           numbers={this.state.array}
           maxNum={Math.max(...this.state.array)}
@@ -225,6 +229,10 @@ class SortVisualizer extends Component<SortVisualizerProps, SortVisualizerState>
 
         <ColorKey {...this.props.colorKey} />
 
+        <div className="SortVisualizer__SwapCount">
+          {/* <p>Current Swaps: {this.state.currentSwaps}</p> */}
+          <p>Total Swaps: {this.props.totalSwaps}</p>
+        </div>
       </div>
     );
   }

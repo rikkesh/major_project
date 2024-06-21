@@ -29,7 +29,7 @@ const Primitive = () => {
 
             </p>
           </div>
-          <button className='btn' onClick={()=>navigate("/stack")}>Learn More about Queue Visually</button>
+          <button className='btn' onClick={()=>navigate("/queue")}>Learn More about Queue Visually</button>
         </li>
         <li>
           <div className='info'>
@@ -39,7 +39,7 @@ const Primitive = () => {
 
             </p>
           </div>
-          <button className='btn' onClick={()=>navigate("/stack")}>Learn More about Linked List Visually</button>
+          <button className='btn' onClick={()=>navigate("/linked_list")}>Learn More about Linked List Visually</button>
         </li>
         <li>
           <div className='info'>
@@ -50,7 +50,8 @@ const Primitive = () => {
 
             </p>
           </div>
-          <button className='btn' onClick={()=>navigate("/stack")}>Learn More about Doubly Linked List Visually</button>
+          <button className='btn' onClick={()=>navigate("/linked_list")}>Learn More about Linked List Visually</button>
+         
         </li>
         <li>
           <div className='info'>
@@ -60,7 +61,7 @@ const Primitive = () => {
             Types of Dequeue are Input-Restricted Dequeue and Output-Restricted Dequeue.
             </p>
           </div>
-          <button className='btn' onClick={()=>navigate("/stack")}>Learn More about Dequeue</button>
+          <button className='btn' onClick={()=>navigate("/dequeue")}>Learn More about Dequeue</button>
         </li>
       </ul>
       </div>

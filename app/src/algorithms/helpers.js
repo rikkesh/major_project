@@ -6,8 +6,9 @@ export const newTrace = (array) => {
       groupB: [],
       groupC: [],
       groupD: [],
-      sortedIndices: []
-    }
+      sortedIndices: [],
+      swapCount: 0, //initialize swap count
+    },
   ];
 };
 
@@ -18,7 +19,10 @@ export const addToTrace = (
   groupA = [],
   groupB = [],
   groupC = [],
-  groupD = []
+  groupD = [],
+  comparing = [],
+  swapping = [],
+  swaps = 0
 ) => {
   trace.push({
     array: [...array],
@@ -26,7 +30,10 @@ export const addToTrace = (
     groupB: [...groupB],
     groupC: [...groupC],
     groupD: [...groupD],
-    sortedIndices: [...sortedIndices]
+    sortedIndices: [...sortedIndices],
+    comparing: [...comparing],
+    swapping: [...swapping],
+    swapCount: swaps,
   });
 };
 

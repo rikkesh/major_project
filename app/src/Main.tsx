@@ -11,8 +11,12 @@ import { GlobalStyle } from './GlobalStyle'
 import Sorting from './Sorting'
 import Features from './Features'
 import Primitive from './components/Primitive/Primitive'
-import Stack from './components/Primitive/Stack'
 import TestYourself from './TestYourself'
+import StackComponent from './pages/stack'
+import QueueComponent from './pages/queue'
+import LinkedList from './pages/linkedlist/LinkedList'
+import LinkedListComponent from './pages/linkedlist'
+import Dequeue from './pages/dequeue'
 
 
 
@@ -53,7 +57,11 @@ const Main = () => {
     <Route path="/sorting" element={<Sorting/>}    />
     <Route path="/contact" element={<Contact/>}    />
     <Route path="/Primitive" element={<Primitive/>}    />
-    <Route path="/stack" element={<Stack/>}    />
+    <Route path="/stack" element={<StackComponent/>}    />
+    <Route path="/queue" element={<QueueComponent/>}    />
+    <Route path="/linked_list" element={<LinkedListComponent/>}    />
+    <Route path="/dequeue" element={<Dequeue/>}    />
+
     <Route path="/TestYourself" element={<TestYourself/>}    />
     
   </Routes>
