@@ -1,15 +1,10 @@
-import React from 'react';
-import {
-  swap,
-  newTrace,
-  addToTrace,
-  lastSorted,
-  createKey
-} from './helpers';
+import React from "react";
+import { swap, newTrace, addToTrace, lastSorted, createKey } from "./helpers";
 
 const SelectionSort = (nums) => {
   // Initial State
   const trace = newTrace(nums);
+  let totalSwaps = 0; // Initialize totalSwaps counter
 
   // Core Algorithm
   for (let i = 0; i < nums.length - 1; i++) {
@@ -24,6 +19,7 @@ const SelectionSort = (nums) => {
         minIndex = j;
         // Visualize: reassign new minIndex;
         addToTrace(trace, nums, lastSorted(trace), [minIndex], [j]);
+        totalSwaps++; // Increment totalSwaps counter
       }
     }
 
@@ -39,13 +35,13 @@ const SelectionSort = (nums) => {
   // Visualize: Final item in the array is sorted
   addToTrace(trace, nums, [...lastSorted(trace), nums.length - 1]);
 
-  return trace;
+  return { trace, totalSwaps }; // Return trace and totalSwaps
 };
 
-export const SelectionSortKey = createKey('Comparing', 'Swapping');
+export const SelectionSortKey = createKey("Comparing", "Swapping");
 
 export const SelectionSortDesc = {
-  title: 'Selection Sort',
+  title: "Selection Sort",
   description: (
     <p>
       <a
@@ -54,16 +50,15 @@ export const SelectionSortDesc = {
         rel="noopener noreferrer"
       >
         Selection Sort
-      </a>{' '}
-      is an in-place comparison sorting algorithm that divides the input
-      list into two parts: the sublist of items already sorted, which is
-      built up from left to right at the front (left) of the list, and
-      the sublist of items remaining to be sorted that occupy the rest
-      of the list. Initially, the sorted sublist is empty and the
-      unsorted sublist is the entire input list. The algorithm proceeds
-      by finding the smallest element in the unsorted sublist,
-      exchanging (swapping) it with the leftmost unsorted element
-      (putting it in sorted order), and moving the sublist boundaries
+      </a>{" "}
+      is an in-place comparison sorting algorithm that divides the input list
+      into two parts: the sublist of items already sorted, which is built up
+      from left to right at the front (left) of the list, and the sublist of
+      items remaining to be sorted that occupy the rest of the list. Initially,
+      the sorted sublist is empty and the unsorted sublist is the entire input
+      list. The algorithm proceeds by finding the smallest element in the
+      unsorted sublist, exchanging (swapping) it with the leftmost unsorted
+      element (putting it in sorted order), and moving the sublist boundaries
       one element to the right.
     </p>
   ),
@@ -82,7 +77,7 @@ export const SelectionSortDesc = {
       O(n<sup>2</sup>)
     </span>
   ),
-  space: <span>O(1)</span>
+  space: <span>O(1)</span>,
 };
 
 export default SelectionSort;

@@ -1,0 +1,63 @@
+/* components/Dequeue.module.css */
+
+.container .box_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    width: 400px;
+    max-width: 400px;
+    position: relative;
+}
+
+.container .box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.container .box .box_item {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.container .box_container::before,
+.container .box_container::after {
+    font-weight: bold;
+    color: #333;
+    position: absolute;
+}
+
+.container .box_container::before {
+    content: 'Front';
+    left: -50px;
+}
+
+.container .box_container::after {
+    content: 'Rear';
+    right: -50px;
+}
+
+.container .buttons_container {
+    display: flex;
+    flex-direction: row;
+}
+
+.container .buttons_container .btn_group {
+    margin: 10px auto;
+}
+
+.section {
+    margin: 20px auto;
+}
+
+.form_group {
+    margin-top: 40px;
+}
+
+.btn_group .btn {
+    margin: 5px;
+}
