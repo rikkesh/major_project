@@ -2,6 +2,7 @@
 import React, { useState, useRef } from 'react';
 import styles from './Dequeue.module.css';
 
+
 class DeQueue {
   items: { [key: number]: any } = {};
   itemToRemoveFrontKey = 0;
@@ -76,9 +77,9 @@ const Dequeue: React.FC = () => {
     const peekedElement = document.querySelector(`${target}`);
     if (!peekedElement) return;
     peekedElement.scrollIntoView();
-    peekedElement.classList.add(styles.peeking);
+    peekedElement.classList.add('{styles.peeking}');
     setTimeout(() => {
-      peekedElement.classList.remove(styles.peeking);
+      peekedElement.classList.remove('{styles.peeking}');
     }, 500);
   };
 
@@ -140,45 +141,43 @@ const Dequeue: React.FC = () => {
   };
 
   return (
-
     <div className={styles.container}>
       <section>
-      <div className="app-container">
-
-      <h1>DeQueue</h1>
-      <div className={styles.box_container}>
-        <div className={styles.box}>
-          {items.map((item, index) => (
-            <div key={index} className={styles.box_item}>
-              {item}
+        <div className="app-container">
+          <h1>DeQueue</h1>
+          <div className={styles.box_container}>
+            <div className={styles.box}>
+              {items.map((item, index) => (
+                <div key={index} className={styles.box_item}>
+                  {item}
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
+          <div className={styles.buttons_container}>
+            <div className={styles.btn_group}>
+              <button onClick={addToFront} className="btn btn-primary">Add To Front</button>
+              <button onClick={removeFromFront} className="btn btn-warning">Remove from Front</button>
+              {/* <button onClick={() => peekDequeue(PEEK_SIDES.FRONT)} className="btn btn-info">Peek Front</button> */}
+            </div>
+            <div className={styles.btn_group}>
+              <button onClick={addToRear} className="btn btn-primary">Add To Rear</button>
+              <button onClick={removeFromRear} className="btn btn-warning">Remove from Rear</button>
+              {/* <button onClick={() => peekDequeue(PEEK_SIDES.REAR)} className="btn btn-info">Peek Rear</button> */}
+            </div>
+            <div className={styles.btn_group}>
+              <button onClick={clearQueue} className="btn btn-danger">Clear</button>
+              <button onClick={isEmptyQueue} className="btn btn-light">Is Empty</button>
+              <button onClick={getSize} className="btn btn-dark">Size</button>
+            </div>
+          </div>
+          <div className={styles.section}>
+            <div className={styles.form_group}>
+              <input ref={palindromeInputRef} type="text" className="form-control" placeholder="Check Palindrome" />
+              <button onClick={checkPalindrome} className="btn btn-dark">Check</button>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className={styles.buttons_container}>
-        <div className={styles.btn_group}>
-          <button onClick={addToFront} className="btn btn-primary">Add To Front</button>
-          <button onClick={removeFromFront} className="btn btn-warning">Remove from Front</button>
-          <button onClick={() => peekDequeue(PEEK_SIDES.FRONT)} className="btn btn-info">Peek Front</button>
-        </div>
-        <div className={styles.btn_group}>
-          <button onClick={addToRear} className="btn btn-primary">Add To Rear</button>
-          <button onClick={removeFromRear} className="btn btn-warning">Remove from Rear</button>
-          <button onClick={() => peekDequeue(PEEK_SIDES.REAR)} className="btn btn-info">Peek Rear</button>
-        </div>
-        <div className={styles.btn_group}>
-          <button onClick={clearQueue} className="btn btn-danger">Clear</button>
-          <button onClick={isEmptyQueue} className="btn btn-light">Is Empty</button>
-          <button onClick={getSize} className="btn btn-dark">Size</button>
-        </div>
-      </div>
-      <div className={styles.section}>
-        <div className={styles.form_group}>
-          <input ref={palindromeInputRef} type="text" className="form-control" placeholder="Check Palindrome" />
-          <button onClick={checkPalindrome} className="btn btn-dark">Check</button>
-        </div>
-      </div>
-      </div>
       </section>
     </div>
   );

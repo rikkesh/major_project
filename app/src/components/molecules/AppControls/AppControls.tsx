@@ -39,23 +39,17 @@ const AppControls: React.FC<AppControlsProps> = ({
         onSelect={onAlgorithmChange}
       />
 
-      {/* <div className="AppControls__Size">
+      <div className="AppControls__Size">
         <span>Size</span>
         <Menu
-          placeholder="Array Size"
-          items={['5', '10', '25', '50', '75', '1000']}
+          placeholder="Array Size"  
+          items={['5', '10', '25', '50', '75', '100']}
           selected={String(arraySize)}
           onSelect={(value) => onArraySizeChange(Number(value))}
         />
       </div>
 
-      <Button onClick={onGenerateRandomArray}>Randomize</Button> */}
-
-      {/* <Switch
-        label="Dark Mode"
-        onSwitch={onToggleDarkMode}
-        checked={darkMode}
-      /> */}
+      <Button onClick={onGenerateRandomArray}>Randomize</Button>
     </Fragment>
   );
 };

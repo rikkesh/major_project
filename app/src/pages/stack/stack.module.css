@@ -1,15 +1,16 @@
-.app-container {
+/* styles/Stack.module.css */
+.appContainer {
     max-width: 600px;
     margin: auto;
     background-color: #f2f2f2;
     padding: 30px;
 }
 
-.app-container h1 {
+.appContainer h1 {
     text-align: left;
 }
 
-.app-container .box_container {
+.boxContainer {
     flex-direction: column;
     justify-content: flex-end;
     display: flex;
@@ -19,45 +20,25 @@
     margin: 0 auto;
 }
 
-.app-container .box {
+.box {
     overflow: auto;
 }
 
-.app-container .box .box_item {
+.boxItem {
     border: 1px solid black;
     padding: 4px 80px;
     text-align: center;
     transition: all 0.2s ease;
 }
 
-.app-container .box .box_item.peeking {
+.boxItem.peeking {
     background-color: #333;
     color: white;
 }
 
-.app-container .buttons-container {
+.buttonsContainer {
     max-width: max-content;
     margin: 30px auto 0 auto;
     display: flex;
     align-items: center;
-}
-
-.icon::before {
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-}
-
-.icon.icon-arrow-right::before {
-    font-family: 'Font Awesome 5 Free', sans-serif;
-    font-weight: 900;
-    content: '\f061';
-}
-
-.icon.icon-arrow-left::before {
-    font-family: 'Font Awesome 5 Free', sans-serif;
-    font-weight: 900;
-    content: '\f060';
 }
