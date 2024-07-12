@@ -44,7 +44,7 @@ const AppControlsSort: React.FC<AppControlsProps> = ({
         <span>Size</span>
         <Menu
           placeholder="Array Size"
-          items={['5', '10', '25', '50', '75', '1000']}
+          items={['5', '10', '25', '50', '75', '100']}
           selected={String(arraySize)}
           onSelect={(value) => onArraySizeChange(Number(value))}
         />
@@ -52,11 +52,6 @@ const AppControlsSort: React.FC<AppControlsProps> = ({
 
       <Button onClick={onGenerateRandomArray}>Randomize</Button>
 
-      {/* <Switch
-        label="Dark Mode"
-        onSwitch={onToggleDarkMode}
-        checked={darkMode}
-      /> */}
     </Fragment>
   );
 };
