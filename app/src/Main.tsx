@@ -10,7 +10,12 @@ import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './GlobalStyle'
 import Sorting from './Sorting'
 import Features from './Features'
-
+import Test from './components/quiz/Test'
+import Button from './components/quiz/Button'
+import Pre from './components/quiz/Pre'
+import Sort from './components/quiz/Sort'
+import Treee from './components/quiz/Treee'
+import Mix from './components/quiz/Mix'
 
 
 
@@ -49,6 +54,12 @@ const Main = () => {
     <Route path="/about" element={<About/>}    />
     <Route path="/sorting" element={<Sorting/>}    />
     <Route path="/contact" element={<Contact/>}    />
+    <Route path="/test" element={<Test/>}    />
+    <Route path="/button" element={<Button/>}    />
+    <Route path="/primitivequiz" element={<Pre/>}    />
+    <Route path="/sortquiz" element={<Sort/>}    />
+    <Route path="/treequiz" element={<Treee/>}    />
+    <Route path="/combinequiz" element={<Mix/>}    />
     
   </Routes>
   <Footer/>

@@ -1,11 +1,14 @@
 // src/App.js
+import LayoutProvider from '@/provider/layoutProvider'
 import React from 'react'
 
 const Contact = () => {
   return (
-    <div>
-      name 
-    </div>
+    //<div>
+    <div></div>
+
+      //<LayoutProvider/>
+    
   )
 }
 

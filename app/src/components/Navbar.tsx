@@ -32,11 +32,9 @@ export default function Navbar()  {
             <NavLink className='navbar-link' to="/contacts">Contact</NavLink>
           </li>
           <li>
-            <NavLink className='navbar-link' to="/contacts">Test Yourself</NavLink>
+            <NavLink className='navbar-link' to="/test">Test Yourself</NavLink>
           </li>
-          {/* <li>
-            <NavLink className='navbar-link 'to="">login</NavLink>
-          </li> */}
+          
             
           <div > {userId ? (<div className='navbar-link'>
               
@@ -47,12 +45,7 @@ export default function Navbar()  {
           ) : 
           (
             <div >
-              <li>
-                <Link className='navbar-link' href='/sign-up'>
-                SignUp
-                </Link>
-                </li>
-                
+              
                 <li>
                 <Link className='navbar-link' href='/sign-in'>
                 SignIn
@@ -61,11 +54,7 @@ export default function Navbar()  {
               </div>
           )
           } </div>
-          <li>
-            <NavLink to="/contacts">login</NavLink>
-          </li>
-
-        
+          
         
       </ul>
     </div>
