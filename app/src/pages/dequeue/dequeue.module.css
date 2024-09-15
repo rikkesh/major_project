@@ -1,4 +1,14 @@
-/* components/Dequeue.module.css */
+/* components/Dequeue.module.css  */
+/* .appContainer {
+    max-width: 600px;
+    margin: auto;
+    background-color: #f2f2f2;
+    padding: 30px;
+} */
+
+.appContainer h1 {
+    text-align: left;
+}
 
 .container .box_container {
     display: flex;
@@ -46,6 +56,11 @@
     flex-direction: row;
 }
 
+.box {
+    overflow: auto;
+}
+
+
 .container .buttons_container .btn_group {
     margin: 10px auto;
 }
@@ -60,4 +75,23 @@
 
 .btn_group .btn {
     margin: 5px;
+}
+
+.boxItem {
+    border: 1px solid black;
+    padding: 4px 80px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.boxItem.peeking {
+    background-color: #333;
+    color: white;
+}
+
+.buttonsContainer {
+    max-width: max-content;
+    margin: 30px auto 0 auto;
+    display: flex;
+    align-items: center;
 }

@@ -1,8 +1,6 @@
 // pages/index.tsx
 import { useEffect } from 'react';
-import App from './Slider';
 
-// ...rest of the code
 
 class Queue {
   items: { [key: number]: number } = {};
@@ -42,30 +40,28 @@ class Queue {
     return this.items[this.itemToRemoveKey];
   }
 }
-
 const QueueComponent = () => {
-    
   useEffect(() => {
     const myQueue = new Queue();
 
     const peekQueueItem = () => {
-      const peekedElement = document.querySelector('.box_item:first-child');
+      const peekedElement = document.querySelector(`.${styles.boxItem}:first-child`);
       if (!peekedElement) {
         return;
       }
-      peekedElement.classList.add('peeking');
+      peekedElement.classList.add(styles.peeking);
       setTimeout(() => {
-        peekedElement.classList.remove('peeking');
+        peekedElement.classList.remove(styles.peeking);
       }, 500);
     };
 
     const renderQueue = () => {
-      const queueElement = document.querySelector('.box');
-      queueElement?.querySelectorAll('.box_item').forEach((item) => item.remove());
+      const queueElement = document.querySelector(`.${styles.box}`);
+      queueElement?.querySelectorAll(`.${styles.boxItem}`).forEach((item) => item.remove());
       for (const key in myQueue.items) {
         const item = myQueue.items[key];
         const queueItemElement = document.createElement('DIV');
-        queueItemElement.classList.add('box_item');
+        queueItemElement.classList.add(styles.boxItem);
         queueItemElement.textContent = item.toString();
         queueElement?.append(queueItemElement);
       }
@@ -104,16 +100,14 @@ const QueueComponent = () => {
   }, []);
 
   return (
-    <div>
     <div className="container">
-   
       <section>
-        <div className="app-container">
+        <div className={styles.appContainer}>
           <h1>Queue</h1>
-          <div className="box_container">
-            <div className="box"></div>
+          <div className={styles.boxContainer}>
+            <div className={styles.box}></div>
           </div>
-          <div className="buttons-container">
+          <div className={styles.buttonsContainer}>
             <div className="btn-group">
               <div id="addItemBtn" className="btn btn-primary">Add Item</div>
               <div id="takeOutItemBtn" className="btn btn-warning">Remove Item</div>

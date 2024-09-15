@@ -14,7 +14,6 @@ import Primitive from './components/Primitive/Primitive'
 import TestYourself from './TestYourself'
 import StackComponent from './pages/stack'
 import QueueComponent from './pages/queue'
-import LinkedList from './pages/linkedlist/LinkedList'
 import LinkedListComponent from './pages/linkedlist'
 import Dequeue from './pages/dequeue'
 

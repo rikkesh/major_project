@@ -1,7 +1,6 @@
 // pages/index.tsx
 import { useEffect } from 'react';
 import './stack.module.css';
-import App from './Slider';
 
 const StackComponent = () => {
   useEffect(() => {
@@ -42,11 +41,11 @@ const StackComponent = () => {
     };
 
     const renderStack = () => {
-      const stackElement = document.querySelector('.box');
-      stackElement?.querySelectorAll('.box_item').forEach((item) => item.remove());
+      const stackElement = document.querySelector(`.${styles.box}`);
+      stackElement?.querySelectorAll(`.${styles.boxItem}`).forEach((item) => item.remove());
       myStack.items.forEach((item) => {
         const stackItemElement = document.createElement('DIV');
-        stackItemElement.classList.add('box_item');
+        stackItemElement.classList.add(styles.boxItem);
         stackItemElement.textContent = item.toString();
         stackElement?.prepend(stackItemElement);
       });
@@ -107,13 +106,13 @@ const StackComponent = () => {
     const myStack = new Stack();
 
     const peekStackItem = () => {
-      const peekedElement = document.querySelector('.box_item:first-child');
+      const peekedElement = document.querySelector(`.${styles.boxItem}:first-child`);
       if (!peekedElement) {
         return;
       }
-      peekedElement.classList.add('peeking');
+      peekedElement.classList.add(styles.peeking);
       setTimeout(() => {
-        peekedElement.classList.remove('peeking');
+        peekedElement.classList.remove(styles.peeking);
       }, 500);
     };
 
@@ -127,10 +126,9 @@ const StackComponent = () => {
   }, []);
 
   return (
-    <div>
     <div className="container">
       <section>
-        <div className="app-container">
+        <div className={styles.appContainer}>
           <div className="mb-3">
             <label htmlFor="decimalToBinaryInput" className="form-label">
               Decimal to binary
@@ -146,10 +144,10 @@ const StackComponent = () => {
             Convert
           </button>
           <h1>Stack</h1>
-          <div className="box_container">
-            <div className="box"></div>
+          <div className={styles.boxContainer}>
+            <div className={styles.box}></div>
           </div>
-          <div className="buttons-container">
+          <div className={styles.buttonsContainer}>
             <div className="btn-group">
               <div id="addItemBtn" className="btn btn-primary">
                 Add Item

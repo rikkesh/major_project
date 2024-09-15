@@ -21,6 +21,10 @@ body>.main {
     margin: 40px auto;
 }
 
+section {
+    margin: 20px auto;
+}
+
 * {
     outline: none;
 }
