@@ -1,7 +1,13 @@
+
+
 interface TreeNode {
   value: any;
   left: TreeNode | null;
   right: TreeNode | null;
+  parent: TreeNode | null;
+    // Explicit declaration for getter properties
+    isLeaf: boolean;
+    hasChildren: boolean;
 }
 
 interface Tree {
@@ -40,54 +46,112 @@ export default class BinarySearchTree implements Tree {
   }
 
   insert(value: any): TreeNode {
-    const newNode: TreeNode = { value, left: null, right: null };
+    const newNode: TreeNode = { value, parent:this.root, left: null, right: null };
+    
     if (!this.root) {
       this.root = newNode;
       return newNode;
     }
+    
     let current: TreeNode = this.root;
     while (true) {
-      if (value < current.value) {
+      const comparison = this.compareFn(value, current.value);
+      
+      if (comparison === COMPARISON.SMALLER) {
         if (!current.left) {
           current.left = newNode;
           return newNode;
         }
         current = current.left;
-      } else {
+      } else if (comparison === COMPARISON.GREATER) {
         if (!current.right) {
           current.right = newNode;
           return newNode;
         }
         current = current.right;
-      }
-    }
-  }
-
-  remove(value: any): TreeNode | null {
-    // Implement the remove logic here, ensuring it returns a TreeNode or null
-    return null;
-  }
-
-  search(value: any): TreeNode | null {
-    let current: TreeNode | null = this.root;
-    while (current) {
-      if (value === current.value) {
+      } else {
+        // value is equal to current.value, handle duplicates if necessary (e.g., skip insertion)
         return current;
       }
-      current = value < current.value ? current.left : current.right;
     }
-    return null;
   }
+  
 
-  min(): TreeNode | null {
-    let current: TreeNode | null = this.root;
+  remove(value: any, node?: TreeNode | null): TreeNode | null {
+    // If node is not provided, search for it by value
+    node = node ?? this.search(value);
+  
+    // If node is not found, return null
+    if (!node) return null;
+  
+    // Check if the node is the root node
+    const nodeIsRoot = !node.parent; // root node has no parent
+    const hasBothChildren = node.left !== null && node.right !== null;
+    const isLeftChild = !nodeIsRoot ? node.parent!.left === node : false;
+  
+    if (node.isLeaf) {
+      // Node is a leaf
+      if (nodeIsRoot) {
+        this.root = null;
+      } else if (isLeftChild) {
+        node.parent!.left = null;
+      } else {
+        node.parent!.right = null;
+      }
+    } else if (!hasBothChildren) {
+      // Node has only one child
+      const child = node.left ?? node.right!;
+      if (nodeIsRoot) {
+        this.root = child;
+      } else if (isLeftChild) {
+        node.parent!.left = child;
+      } else {
+        node.parent!.right = child;
+      }
+      child.parent = node.parent;
+    } else {
+      // Node has two children
+      const minRightLeaf = this.min(node.right);
+      if (!minRightLeaf) return null; // Edge case if minRightLeaf is null
+      
+      // Remove the successor node
+      if (minRightLeaf.parent!.left === minRightLeaf) {
+        minRightLeaf.parent!.left = null;
+      } else {
+        minRightLeaf.parent!.right = null;
+      }
+      
+      // Replace node value with successor's value
+      node.value = minRightLeaf.value;
+    }
+  
+    return node;
+  }
+  
+  
+
+  search(value: any): TreeNode | null {
+    // Perform in-order traversal to get the nodes in sorted order
+    const nodes = this.inOrderTraverse();
+    
+    // Find and return the node that matches the value
+    const foundNode = nodes.find(node => node.value === value);
+    
+    // Return the found node or null if not found
+    return foundNode || null;
+  }
+  
+
+  min(node: TreeNode | null = this.root): TreeNode | null {
+    let current: TreeNode | null = node;
     while (current?.left) {
       current = current.left;
     }
     return current;
   }
+  
 
-  max(): TreeNode | null {
+  max(node: TreeNode | null = this.root): TreeNode | null {
     let current: TreeNode | null = this.root;
     while (current?.right) {
       current = current.right;

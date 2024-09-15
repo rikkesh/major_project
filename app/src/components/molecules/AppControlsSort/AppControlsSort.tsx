@@ -34,6 +34,10 @@ const AppControlsSort: React.FC<AppControlsProps> = ({
         items={[
           'Bubble Sort',
           'Selection Sort',
+          'Insertion Sort',
+          'Merge Sort',
+          'Quick Sort',
+          'Heap Sort'
           
         ]}
         selected={validatedAlgorithm}

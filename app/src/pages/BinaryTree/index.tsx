@@ -4,6 +4,7 @@ import  BinarySearchTree from './utils/binary_search_tree';
 import BinarySearchTreeUI from './components/bst-ui';
 import createSampleTreeData from './utils/create-sample-tree-data'; // Ensure the path is correct
 import '../../styles/tree.css';
+import './binary_tree.css'
 
 const BinarySearchTreeComponent = () => {
   const bst = useRef<BinarySearchTree | null>(null);
