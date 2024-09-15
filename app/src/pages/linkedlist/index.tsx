@@ -6,6 +6,8 @@ import RenderLinkedList from './RenderLinkedList';
 import Head from 'next/head';
 import '../../styles/linked_list.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import App from './Slider';
+
 
 
 
@@ -80,6 +82,7 @@ const LinkedListComponent = () => {
               </div>
             </div>
           </section>
+          <App></App>
         </div>
       </main>
     </div>

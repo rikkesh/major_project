@@ -1,6 +1,7 @@
 // pages/index.tsx
 import { useEffect } from 'react';
 import './stack.module.css';
+import App from './Slider';
 
 const StackComponent = () => {
   useEffect(() => {
@@ -126,6 +127,7 @@ const StackComponent = () => {
   }, []);
 
   return (
+    <div>
     <div className="container">
       <section>
         <div className="app-container">
@@ -163,6 +165,10 @@ const StackComponent = () => {
         </div>
       </section>
     </div>
+    <App></App>
+    </div>
+    
+    
   );
 };
 

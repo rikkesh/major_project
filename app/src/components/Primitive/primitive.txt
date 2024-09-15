@@ -1,0 +1,125 @@
+import React from 'react';
+import styled from 'styled-components';
+import { useNavigate } from 'react-router-dom';
+
+const Primitive = () => {
+  const navigate = useNavigate();
+  return (
+    <Section>
+      <div className="container">
+        <ul>
+          <li>
+            <div className="info">
+              <span className="title">Stack</span>
+              <p>
+                Stack is a linear data structure that can be implemented by both static and dynamic data structures. A stack is an ordered collection of data items into which new items may be inserted and from which existing items may be deleted from only one end. Thus, a stack maintains a Last-in First-out (LIFO) sequence of elements.
+              </p>
+            </div>
+            <button className="btn" onClick={() => navigate("/stack")}>Learn More about Stack Visually</button>
+          </li>
+          <li>
+            <div className="info">
+              <span className="title">Queue</span>
+              <p>
+                Queue is a linear data structure that can be implemented in both static and dynamic data structures. A queue is an ordered collection of data items in which a data item is inserted from one end and deleted from the other end. The first data item inserted is the first to be removed, making it a First-in First-out (FIFO) list.
+              </p>
+            </div>
+            <button className="btn" onClick={() => navigate("/queue")}>Learn More about Queue Visually</button>
+          </li>
+          <li>
+            <div className="info">
+              <span className="title">Linked List</span>
+              <p>
+                A linked list allocates space for each element separately in its own block of memory called a node. A linked list is an ordered collection of data items, with each item containing a pointer to the next element. Memory for each node can be allocated dynamically whenever needed.
+              </p>
+            </div>
+            <button className="btn" onClick={() => navigate("/linked_list")}>Learn More about Linked List Visually</button>
+          </li>
+          <li>
+            <div className="info">
+              <span className="title">Doubly Linked List</span>
+              <p>
+                A doubly linked list is a data structure consisting of nodes, where each node contains a data element, a reference to the next node, and a reference to the previous node. This allows traversal in both forward and backward directions.
+              </p>
+            </div>
+            <button className="btn" onClick={() => navigate("/linked_list")}>Learn More about Doubly Linked List Visually</button>
+          </li>
+          <li>
+            <div className="info">
+              <span className="title">Dequeue</span>
+              <p>
+                A deque (double-ended queue) is an abstract data structure that allows insertion and removal of elements from both the front and the back. It can operate as both a stack and a queue, offering flexibility in usage.
+              </p>
+            </div>
+            <button className="btn" onClick={() => navigate("/dequeue")}>Learn More about Dequeue Visually</button>
+          </li>
+        </ul>
+      </div>
+    </Section>
+  );
+};
+
+export default Primitive;
+
+const Section = styled.section`
+  .container {
+    margin: 0 auto;
+    padding: 20px;
+    background: #fefefe;
+    color: #333;
+    max-width: 1200px;
+  }
+
+  .btn {
+    background: #E7DECC;
+    color: #333;
+    width: 300px;
+    height: 40px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .btn:hover {
+    background: rgba(226, 234, 254, 1);
+    color: #333;
+    transform: translateY(-2px);
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    border: 1px solid rgba(218, 218, 218, 0.24);
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: background-color 0.3s;
+  }
+
+  li:hover {
+    background: rgba(166, 126, 253, 0.1);
+  }
+
+  .info {
+    margin-bottom: 10px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  p {
+    max-width: 600px;
+    line-height: 1.6;
+  }
+`;

@@ -1,5 +1,6 @@
 // pages/index.tsx
 import { useEffect } from 'react';
+import App from './Slider';
 
 // ...rest of the code
 
@@ -103,7 +104,9 @@ const QueueComponent = () => {
   }, []);
 
   return (
+    <div>
     <div className="container">
+   
       <section>
         <div className="app-container">
           <h1>Queue</h1>
@@ -120,6 +123,9 @@ const QueueComponent = () => {
           </div>
         </div>
       </section>
+
+    </div>
+    <App></App>
     </div>
   );
 };

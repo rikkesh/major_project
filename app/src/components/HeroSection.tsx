@@ -21,7 +21,7 @@ const HeroSection = () => {
 
       <div className="">
 
-      <Courses/>
+      
       </div>
       
     </Wrapper>
