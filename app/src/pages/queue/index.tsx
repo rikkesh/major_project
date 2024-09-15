@@ -1,5 +1,8 @@
 // pages/index.tsx
 import { useEffect } from 'react';
+import styles from './Queue.module.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import App from './Slider';
 
 
 class Queue {
@@ -100,6 +103,7 @@ const QueueComponent = () => {
   }, []);
 
   return (
+    <div>
     <div className="container">
       <section>
         <div className={styles.appContainer}>

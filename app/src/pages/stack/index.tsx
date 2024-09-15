@@ -1,6 +1,8 @@
 // pages/index.tsx
 import { useEffect } from 'react';
-import './stack.module.css';
+import styles from './stack.module.css'
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import App from './Slider';
 
 const StackComponent = () => {
   useEffect(() => {
@@ -126,7 +128,8 @@ const StackComponent = () => {
   }, []);
 
   return (
-    <div className="container">
+    <div>
+    <div className={styles.container}>
       <section>
         <div className={styles.appContainer}>
           <div className="mb-3">
@@ -163,10 +166,9 @@ const StackComponent = () => {
         </div>
       </section>
     </div>
-    <App></App>
+    <App/>
     </div>
-    
-    
+
   );
 };
 
