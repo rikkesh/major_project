@@ -4,6 +4,8 @@ class TreeNode {
   left: TreeNode | null;
   right: TreeNode | null;
 
+
+
   constructor(value: string | number, parent: TreeNode | null = null) {
     this.value = value.toString();
     this.parent = parent;

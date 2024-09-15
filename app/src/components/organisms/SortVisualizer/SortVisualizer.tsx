@@ -7,7 +7,6 @@ import VisualizerControls from '../../molecules/VisualizerControls/VisualizerCon
 import ProgressBar from '../../molecules/ProgressBar/ProgressBar';
 import ColorKey from '../../molecules/ColorKey/ColorKey';
 import SortInfo from '../../molecules/SortInfo/SortInfo';
-import SortTopBar from '../SortTopBar/SortTopBar';
 
 interface SortVisualizerProps {
   array: number[];
