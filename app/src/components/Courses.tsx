@@ -28,7 +28,7 @@ const Courses = () => {
 <div className="middle">
 <div className="text">
   
-<button onClick={()=>navigate("/Primitive")}>Primitive Algorithm</button>
+<button onClick={()=>navigate("/Primitive")}>Linear Data Structure</button>
 
 </div>
 </div>
@@ -36,7 +36,11 @@ const Courses = () => {
 <div className="container">
 <img src="./images/hero.jpg" alt="Avatar" className="hover-image" />
 <div className="middle">
-<div className="text">Tree Algorithm</div>
+<div className="text">
+  
+<button onClick={()=>navigate("/tree")}>Tree Algorithm</button>
+
+</div>
 </div>
 </div>
 </div>

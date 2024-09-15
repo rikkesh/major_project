@@ -16,7 +16,7 @@ import StackComponent from './pages/stack'
 import QueueComponent from './pages/queue'
 import LinkedListComponent from './pages/linkedlist'
 import Dequeue from './pages/dequeue'
-
+import BinarySearchTreeComponent from './pages/BinaryTree'
 
 
 
@@ -62,6 +62,7 @@ const Main = () => {
     <Route path="/dequeue" element={<Dequeue/>}    />
 
     <Route path="/TestYourself" element={<TestYourself/>}    />
+    <Route path="/tree" element={<BinarySearchTreeComponent/>}    />
     
   </Routes>
   <Footer/>
