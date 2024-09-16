@@ -17,6 +17,13 @@ import QueueComponent from './pages/queue'
 import LinkedListComponent from './pages/linkedlist'
 import Dequeue from './pages/dequeue'
 import BinarySearchTreeComponent from './pages/BinaryTree'
+import Button from './components/quiz/Button'
+import LinearQuiz from './components/quiz/Pre'
+import SortQuiz from './components/quiz/Sort'
+import TreeQuiz from "./components/quiz/Treee"
+
+import Mix from './components/quiz/Mix'
+
 
 
 
@@ -62,6 +69,17 @@ const Main = () => {
     <Route path="/dequeue" element={<Dequeue/>}    />
 
     <Route path="/TestYourself" element={<TestYourself/>}    />
+    <Route path="/button" element={<Button/>}    />
+    <Route path="/primitivequiz" element={<LinearQuiz/>}    />
+    <Route path="/sortquiz" element={<SortQuiz/>}    />
+    <Route path="/treequiz" element={<TreeQuiz/>}    />
+    <Route path="/combinequiz" element={<Mix/>}    />
+
+
+
+
+
+
     <Route path="/tree" element={<BinarySearchTreeComponent/>}    />
     
   </Routes>

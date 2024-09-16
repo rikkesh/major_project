@@ -1,0 +1,86 @@
+
+export const pridata=[
+    
+    {
+        question: "What is the main feature of a deque when visualized?",
+        option1: "It allows for random access to elements",
+        option2: "It allows insertion and deletion at both ends",
+        option3: "It only allows insertion at one end and deletion at the other.",
+        option4:"It is always circular",
+        ans: 2,
+
+    },
+    {
+        question: "When visualizing the traversal of a singly linked list, which direction are you typically moving?",
+        option1: "From the head node to the last node",
+        option2: "From the last node to the head node",
+        option3: "From the middle node to the head node",
+        option4: "From the middle node to the last node",
+        ans:1,
+    },
+    {
+        question: "What does the visualization of a queue's enqueue operation typically show?",
+        option1: "Inserting an element at the front of the queue.",
+        option2: "Inserting an element at the rear of the queue.",
+        option3: "Removing an element from the front of the queue.",
+        option4: "Removing an element from the rear of the queue.",
+        ans: 2,
+    },
+   
+    {
+        question: "What is the average case time complexity of binary search?",
+        option1: "O(n)",
+        option2: "O(n log n)",
+        option3: "O(log n)",
+        option4: "O(1)",
+        ans: 3,
+    },
+    {
+        question: "In a visualization of a queue, which principle is demonstrated by the order of element removal?",
+        option1: "LIFO (Last In, First Out)",
+        option2: "FIFO (First In, First Out)",
+        option3: "FILO (First In, Last Out)",
+        option4: "Random order",
+        ans:2,
+    },
+    {
+        question: "In a stack visualization, what operation shows the removal on the top element?",
+        option1: "Enqueue",
+        option2: "Pop",
+        option3: "Insert",
+        option4: "Append",
+        ans:2,
+    },
+    {
+        question: "In a queue visualization, where is a new element added? ",
+        option1: "Front",
+        option2: "Rear",
+        option3: "Middle",
+        option4: "Middle position",
+        ans:1,
+    },
+    {
+        question: "What operations can be performed on both ends of a deque?",
+        option1: "Push and Pop",
+        option2: "Enqueue and Dequeue",
+        option3: "Insert and Delete",
+        option4: "Push, Pop, Enqueue, and Dequeue",
+        ans:4,
+    },
+    {
+        question: "What is a key difference between a queue and a stack?",
+        option1: "A queue allows access to the most recently added element, while a stack does not",
+        option2: " A stack allows access to the most recently added element, while a queue does not ",
+        option3: "Both allow access to the most recently added element.",
+        option4: " Both allow access to the least recently added element",
+        ans:2,
+    },
+    {
+        question: "The minimum number of stacks needed to implement a queue is",
+        option1: "2",
+        option2: "3",
+        option3: "5",
+        option4: "7",
+        ans:1,
+    },
+]

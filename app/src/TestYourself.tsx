@@ -1,10 +1,9 @@
 import React from 'react'
+import Heroo from './components/quiz/Heroo'
 
 const TestYourself = () => {
   return (
-    <div>
-      quiz question appears here
-    </div>
+    <Heroo/>
   )
 }
 
